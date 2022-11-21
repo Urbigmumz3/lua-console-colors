@@ -1,6 +1,6 @@
-function color(colour)
+local function color(colour)
   if colour == "red" then
-    colour = "\27[31m"
+    colour = "\27[0;31m"
   elseif colour == "blue" then
     colour = "\27[0;94m"
   elseif colour == "reset" then
@@ -21,8 +21,15 @@ function color(colour)
     colour = "\27[0;95m"
   elseif colour == "grey" then
     colour = "\27[90m"
+  elseif colour == "green" then
+    colour = "\27[0;32m"
   else
     colour = "\27[0m"
   end
   return colour
 end
+
+-- to use:
+print(color("green") .. "hello world")
+-- or
+io.write(color("green") .. "hello world")
